@@ -171,7 +171,7 @@ h6, .h6 {
 .main {
 
   .about_company {
-    margin-top: 9.2%;
+    margin-top: 107px;
     font-size: 36px;
     font-weight: 300;
     font-style: normal;
@@ -190,22 +190,19 @@ h6, .h6 {
     flex-wrap: wrap;
     flex-direction: column;
     max-height: 620px;
-    .content {
-      display: flex;
-      position: relative;
-      width: 39.3%;
-      .images {
-        background: black;
+    position: relative;
 
-      }
-      .enclosed {
-        position: absolute;
-        top: 49%;
-        right: -43%;
-        flex-basis: 415px;
-        border: solid 1px #979797;
-        background: black;
-      }
+    .images {
+      background: black;
+      width: 39.3%;
+    }
+    .enclosed {
+      position: absolute;
+      top: 49%;
+      right: 37%;
+      flex-basis: 415px;
+      border: solid 1px #979797;
+      background: black;
     }
 
     .h5 {
@@ -274,12 +271,12 @@ h6, .h6 {
         }
         .text {
           background: #ffffff;
-          .h4{
-            color: black;
+          .h4 {
+            color: @color_black;
             font-weight: 800;
           }
-          .a{
-            color: black;
+          .a {
+            color: @color_black;
             font-weight: 800;
           }
         }
@@ -287,12 +284,12 @@ h6, .h6 {
       .img {
         width: 863px;
         height: 500px;
-        background: black;
+        background: @color_black;
         border: 1px solid @color_apple-green;
         transition: 1s;
       }
       .text {
-        background: #7ed321;
+        background: @color_apple-green;
         width: 26%;
         height: 500px;
         border: 1px solid @color_apple-green;
@@ -323,6 +320,117 @@ h6, .h6 {
       }
     }
   }
+}
+
+.slider {
+  margin-bottom: 4.1%;
+  .h1 {
+    margin-top: 9.2%;
+    margin-bottom: 4.3%;
+  }
+  .carousel-inner h3 {
+    background-color: rgba(20, 49, 68, 0.6);
+    padding: 20px;
+    animation: anime-H3 1.3s ease-out;
+  }
+  .carousel-inner p {
+    font-size: 18px;
+    background-color: rgba(30, 29, 29, 0.6);
+    padding: 20px;
+    animation: anime-P 1.6s ease-out;
+  }
+
+  @keyframes anime-H3 {
+    from {
+      opacity: 0;
+      transform: translateX(-2000px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes anime-P {
+    from {
+      opacity: 0;
+      transform: translateX(2000px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+.useful {
+  background: @color_apple-green;
+  padding-bottom: 47px;
+  margin-bottom: 88px;
+  .h1 {
+    text-align: left;
+    color: @color_white;
+    font-weight: 300;
+    padding-top: 5%;
+    padding-bottom: 3%;
+    padding-left: 2%;
+
+  }
+  .content {
+    display: flex;
+    border-left: 2px solid white;
+    padding-left: 2%;
+    .text {
+      width: 63%;
+      .h5 {
+        width: 90%;
+        text-align: left;
+        font-family: Helvetica, sans-serif;
+      }
+    }
+
+    .img {
+      width: 30%;
+      border: 1px solid white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      div {
+        width: 80%;
+        padding-top: 60%;
+        background: black;
+      }
+    }
+  }
+}
+
+.footer {
+  .h1 {
+
+  }
+  .span {
+    font-size: @font_36;
+    display: flex;
+    .green {
+      color: @color_apple-green;
+      font-weight: bold;
+    }
+    .h1 {
+
+    }
+  }
+  .content {
+    display: flex;
+    justify-content: center;
+    .item {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+      width: 20%;
+      margin: 0 1%;
+      height: 20vh;
+    }
+  }
+
 }
 
 .debug(@background, @outline) {
