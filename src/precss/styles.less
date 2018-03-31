@@ -1,0 +1,351 @@
+@import "project.less";
+@import "smart-grid.less";
+
+.reset();
+
+.body {
+  font-family: Roboto, sans-serif;
+}
+
+.wrapper {
+  .wrapper();
+}
+
+.debug {
+  .debug(rgba(0, 0, 0, 0.5), 1px solid #ff0);
+}
+
+h1, .h1 {
+  font-size: @font_36;
+  text-align: center;
+  margin: 30px 0;
+}
+
+h2, .h2 {
+  font-size: @font_34;
+  text-align: center;
+  margin: 24px 0;
+}
+
+h3, .h3 {
+  font-size: @font_28;
+  text-align: center;
+  margin: 18px 0;
+}
+
+h4, .h4 {
+  font-size: @font_24;
+  text-align: center;
+  margin: 14px 0;
+}
+
+h4, .h4 {
+  font-size: @font_20;
+  text-align: center;
+  margin: 10px 0;
+}
+
+h5, .h5 {
+  font-size: @font_18;
+  text-align: center;
+  margin: 8px 0;
+}
+
+h6, .h6 {
+  font-size: @font_16;
+  text-align: center;
+  margin: 6px 0;
+}
+
+.head {
+  display: flex;
+  justify-content: center;
+
+  .header {
+    max-width: 1440px;
+    width: 100%;
+    background: url("/img/building1080592.png") no-repeat;
+    background-size: contain;
+    position: relative;
+
+    .spacer {
+      padding-top: 66.666%;
+      width: 100%;
+    }
+
+    .items {
+      top: 0;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      margin-left: 0;
+      margin-right: 0;
+      display: flex;
+      flex-wrap: wrap;
+
+      .first {
+        width: 100%;
+        display: flex;
+        height: 45%;
+        .black {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+
+          h2 {
+            width: 100%;
+            font-weight: 300;
+            font-family: @font_light;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: center;
+            color: #ffffff;
+          }
+          .green {
+            color: @color_apple-green;
+            font-weight: 900;
+            font-family: @font_black;
+          }
+          background: @color_charcoal-grey;
+        }
+      }
+      .second {
+        width: 100%;
+        display: flex;
+        height: 55%;
+        .black {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          font-family: @font_roboto;
+          align-items: center;
+          h1 {
+            font-weight: 300;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: normal;
+
+          }
+          h4 {
+            width: 75%;
+            color: @color_white;
+            font-weight: 300;
+
+            a {
+
+              color: @color_white;
+              font-style: normal;
+              font-stretch: normal;
+              line-height: 1.67;
+              letter-spacing: normal;
+              text-align: center;
+            }
+          }
+          .green {
+            a {
+              color: @color_apple-green;
+            }
+            color: @color_apple-green;
+          }
+          background: @color_charcoal-grey;
+        }
+      }
+
+      .item {
+        width: 25%;
+        margin: 0 0 0 0;
+      }
+
+      .opacity {
+        background: @color_white-four;
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+.main {
+
+  .about_company {
+    margin-top: 9.2%;
+    font-size: 36px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    font-family: @font_roboto;
+    letter-spacing: normal;
+    text-align: left;
+    color: @color_apple-green;
+    span {
+      font-weight: 900;
+    }
+  }
+  .items {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-height: 620px;
+    .content {
+      display: flex;
+      position: relative;
+      width: 39.3%;
+      .images {
+        background: black;
+
+      }
+      .enclosed {
+        position: absolute;
+        top: 49%;
+        right: -43%;
+        flex-basis: 415px;
+        border: solid 1px #979797;
+        background: black;
+      }
+    }
+
+    .h5 {
+      width: 48.1%;
+      font-size: 18px;
+      padding-left: 18px;
+      font-family: @font_roboto;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: left;
+      color: #000000;
+      border-left: solid 2px @color_apple-green;
+      margin-bottom: 12%;
+    }
+
+    .info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 33%;
+      height: 100px;
+      background: @color_white-three;
+      border: 1px solid @color_apple-green;
+      margin: 0 0 0 auto;
+      font-family: @font_roboto;
+      color: @color_black;
+      span {
+        opacity: 0.8;
+        font-size: 40px;
+        font-weight: bold;
+
+        margin: 0 3%;
+      }
+      h6 {
+        opacity: 0.8;
+        font-size: 16px;
+      }
+    }
+
+  }
+}
+
+.services {
+  background: @color_white-three;
+  padding-top: 3%;
+  margin-top: 5.6%;
+  .title {
+    text-align: left;
+    margin: 0;
+  }
+  .items {
+
+    .item {
+      display: flex;
+      margin-top: 5.2%;
+      &:first-child {
+        margin-top: 4.4%;
+      }
+      &:hover {
+        .img {
+          opacity: 0.5;
+          background: pink;
+        }
+        .text {
+          background: #ffffff;
+          .h4{
+            color: black;
+            font-weight: 800;
+          }
+          .a{
+            color: black;
+            font-weight: 800;
+          }
+        }
+      }
+      .img {
+        width: 863px;
+        height: 500px;
+        background: black;
+        border: 1px solid @color_apple-green;
+        transition: 1s;
+      }
+      .text {
+        background: #7ed321;
+        width: 26%;
+        height: 500px;
+        border: 1px solid @color_apple-green;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 1s;
+
+        .h4 {
+          text-align: left;
+          width: 80%;
+          transition: 1s;
+          color: white;
+
+        }
+        .h6 {
+          text-align: left;
+          width: 80%;
+          margin-top: 10%;
+          margin-bottom: 15%;
+        }
+        .a {
+          width: 80%;
+          transition: 1s;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+.debug(@background, @outline) {
+  height: 100vh;
+  position: fixed;
+  width: 100%;
+
+  > div {
+    height: inherit;
+    .wrapper();
+
+    > div {
+      height: inherit;
+      .row-flex();
+
+      > div {
+        .col();
+        .size(1);
+        height: inherit;
+        outline: @outline;
+        background: @background;
+      }
+    }
+  }
+}
+
