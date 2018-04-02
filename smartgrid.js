@@ -8,24 +8,33 @@ const settings = {
         fields: '0'
     },
     breakPoints: {
-        ls: {
-            width: "1280px",
-            fields: "20px"
-        },
         ld: {
             width: "1024px",
             fields: "15px"
         },
+        m: {
+            width: "993px",
+            fields: "15px"
+        },
+        s: {
+            width: "933px",
+            fields: "15px"
+        },
+
         sm: {
             width: "768px",
             fields: "10px"
         },
         md: {
-            width: "600px",
+            width: "730px",
             fields: "5px"
         },
         xs: {
             width: "480px",
+            fields: "5px"
+        },
+        ls: {
+            width: "375px",
             fields: "5px"
         },
         xxs: {

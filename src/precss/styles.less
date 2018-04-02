@@ -34,12 +34,6 @@ h3, .h3 {
 }
 
 h4, .h4 {
-  font-size: @font_24;
-  text-align: center;
-  margin: 14px 0;
-}
-
-h4, .h4 {
   font-size: @font_20;
   text-align: center;
   margin: 10px 0;
@@ -88,6 +82,13 @@ h6, .h6 {
         width: 100%;
         display: flex;
         height: 45%;
+        .md-block({ .item:nth-child(4) {
+          display: none;
+        } });
+        .ls-block({ .item:nth-child(2) {
+          display: none;
+        } });
+
         .black {
           display: flex;
           flex-direction: column;
@@ -102,7 +103,13 @@ h6, .h6 {
             line-height: normal;
             letter-spacing: normal;
             text-align: center;
+            transition: 1s;
             color: #ffffff;
+            .ld-block({ font-size: @font_26; });
+            .s-block({ font-size: @font_22; });
+            .sm-block({ font-size: @font_20; margin-top: 4%; margin-bottom: 4%; });
+            .md-block({ font-size: @font_18; });
+            .xs-block({ font-size: @font_13; });
           }
           .green {
             color: @color_apple-green;
@@ -116,6 +123,13 @@ h6, .h6 {
         width: 100%;
         display: flex;
         height: 55%;
+        .md-block({ .item:nth-child(3) {
+          display: none;
+        } });
+        .ls-block({ .item:nth-child(1) {
+          display: none;
+        } });
+
         .black {
           display: flex;
           flex-direction: column;
@@ -128,12 +142,21 @@ h6, .h6 {
             font-stretch: normal;
             line-height: normal;
             letter-spacing: normal;
+            .ld-block({ font-size: 26px; line-height: inherit });
+            .md-block({ font-size: @font_22; margin-top: 0; });
+            .xs-block({ font-size: @font_18; margin-top: 0; display: none; });
 
           }
           h4 {
-            width: 75%;
+            width: 65%;
             color: @color_white;
             font-weight: 300;
+            .ld-block({ width: 75%; font-size: @font_18; });
+            .s-block({ font-size: @font_16; margin-top: 4%; margin-bottom: 4%; });
+            .sm-block({ width: 85%; font-size: @font_16; margin-top: 2%; margin-bottom: 2%; });
+            .md-block({ width: 88%; font-size: @font_14; margin-top: 1%; margin-bottom: 1%; });
+            .md-block({ width: 90%; font-size: @font_12; margin-top: 1%; margin-bottom: 1%; });
+            .xs-block({ font-size: @font_11; });
 
             a {
 
@@ -158,6 +181,11 @@ h6, .h6 {
       .item {
         width: 25%;
         margin: 0 0 0 0;
+        transition: 1s;
+        animation: forwards;
+        .md-block({ width: 33.333333%; });
+        .ls-block({ width: 50%; });
+
       }
 
       .opacity {
@@ -171,7 +199,7 @@ h6, .h6 {
 .main {
 
   .about_company {
-    margin-top: 107px;
+    margin-top: 9.2%;
     font-size: 36px;
     font-weight: 300;
     font-style: normal;
@@ -191,10 +219,18 @@ h6, .h6 {
     flex-direction: column;
     max-height: 620px;
     position: relative;
+    .s-block({ flex-direction: row; max-height: none; justify-content: center; });
 
     .images {
       background: black;
       width: 39.3%;
+      min-width: 450px;
+      transition: 1s;
+      animation: forwards;
+      .s-block({ order: -2; min-width: unset; width: 45%; });
+      .md-block({ width: 85%; img {
+        width: 100%
+      } });
     }
     .enclosed {
       position: absolute;
@@ -203,6 +239,9 @@ h6, .h6 {
       flex-basis: 415px;
       border: solid 1px #979797;
       background: black;
+      transition: 1s;
+      .s-block({ position: unset; flex-basis: unset; width: 45%; margin-left: 3%; margin-top: -2%; });
+      .md-block({ display: none; });
     }
 
     .h5 {
@@ -219,29 +258,40 @@ h6, .h6 {
       color: #000000;
       border-left: solid 2px @color_apple-green;
       margin-bottom: 12%;
+      transition: 1s;
+      .s-block({ order: -2; width: 45%; margin: 0 0 auto 3%; padding-left: 2%; });
+      .md-block({ padding: 3% 0 2% 0; border-left: none; border-top: solid 2px @color_apple-green; width: 85%; margin: 2% 0 2% 0; });
+
     }
-
-    .info {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .infos {
       width: 33%;
-      height: 100px;
-      background: @color_white-three;
-      border: 1px solid @color_apple-green;
       margin: 0 0 0 auto;
-      font-family: @font_roboto;
-      color: @color_black;
-      span {
-        opacity: 0.8;
-        font-size: 40px;
-        font-weight: bold;
-
-        margin: 0 3%;
-      }
-      h6 {
-        opacity: 0.8;
-        font-size: 16px;
+      transition: 1s;
+      .s-block({ order: -1; width: 45%; margin: 0; align-self: flex-end; });
+      .md-block({ width: 85%; margin: 0; });
+      .ls-block({ width: 100%; });
+      .info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        background: @color_white-three;
+        border: 1px solid @color_apple-green;
+        font-family: @font_roboto;
+        color: @color_black;
+        &:first-child {
+          border-bottom: none;
+        }
+        span {
+          opacity: 0.8;
+          font-size: 40px;
+          font-weight: bold;
+          margin: 0 3%;
+        }
+        h6 {
+          opacity: 0.8;
+          font-size: 16px;
+        }
       }
     }
 
@@ -261,49 +311,56 @@ h6, .h6 {
     .item {
       display: flex;
       margin-top: 5.2%;
-      &:first-child {
-        margin-top: 4.4%;
-      }
+
+      .sm-block({ flex-direction: column; });
+      .xs-block({ position: relative });
+
       &:hover {
         .img {
-          opacity: 0.5;
-          background: pink;
+          opacity: 1;
         }
         .text {
-          background: #ffffff;
+          background: @color_apple-green;
+          .xs-block({ opacity: 1; transition: 1s; animation: forwards; });
+
           .h4 {
-            color: @color_black;
+            color: @color_white;
             font-weight: 800;
           }
           .a {
-            color: @color_black;
+            color: @color_white;
             font-weight: 800;
           }
         }
       }
       .img {
-        width: 863px;
-        height: 500px;
-        background: @color_black;
+        display: flex;
+        width: 73.7564322%;
         border: 1px solid @color_apple-green;
         transition: 1s;
+        opacity: 0.5;
+        .sm-block({ width: 100%; });
+        .xs-block({ opacity: 1; });
       }
       .text {
-        background: @color_apple-green;
-        width: 26%;
-        height: 500px;
+
+        background: @color_white;
+        width: 26.2%;
         border: 1px solid @color_apple-green;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         transition: 1s;
+        animation: ease-in-out;
+        .sm-block({ width: 100%; });
+        .xs-block({ position: absolute; height: 100%; opacity: 0 });
 
         .h4 {
           text-align: left;
           width: 80%;
           transition: 1s;
-          color: white;
+          .sm-block({ margin-bottom: 1%; width: 90% });
 
         }
         .h6 {
@@ -311,11 +368,14 @@ h6, .h6 {
           width: 80%;
           margin-top: 10%;
           margin-bottom: 15%;
+          .sm-block({ margin-top: 2%; margin-bottom: 3%; width: 90% });
         }
         .a {
           width: 80%;
           transition: 1s;
-          color: white;
+          color: @color_black;
+          .sm-block({ margin-bottom: 3%; width: 90% });
+
         }
       }
     }
@@ -364,8 +424,8 @@ h6, .h6 {
 
 .useful {
   background: @color_apple-green;
-  padding-bottom: 47px;
-  margin-bottom: 88px;
+  padding-bottom: 3%;
+  margin-bottom: 6%;
   .h1 {
     text-align: left;
     color: @color_white;
@@ -385,19 +445,31 @@ h6, .h6 {
         width: 90%;
         text-align: left;
         font-family: Helvetica, sans-serif;
+        &:first-child {
+          .sm-block({ width: 90%; });
+        }
+        &:nth-child(2) {
+          .sm-block({ width: 90%; });
+        }
+        .sm-block({ width: 145%; });
+        .xs-block({ &:first-child {
+          width: 140%;
+        } &:nth-child(2) {
+            width: 140%;
+          } width: 140%; });
+
       }
     }
 
     .img {
       width: 30%;
-      border: 1px solid white;
       display: flex;
       justify-content: center;
       align-items: center;
+      .sm-block({ align-items: flex-start; margin-top: 2% });
+      .xs-block({ height: 200px; align-items: center; margin-top: 2%; display: none; });
       div {
         width: 80%;
-        padding-top: 60%;
-        background: black;
       }
     }
   }
@@ -405,29 +477,79 @@ h6, .h6 {
 
 .footer {
   .h1 {
-
+    .ld-block({ font-size: @font_26; });
+    .m-block({ font-size: @font_24; });
   }
   .span {
-    font-size: @font_36;
     display: flex;
+    justify-content: center;
     .green {
       color: @color_apple-green;
       font-weight: bold;
     }
     .h1 {
-
+      text-align: left;
+      font-size: @font_30;
+      .ld-block({ font-size: @font_26; });
+      .m-block({ font-size: @font_20; });
+      .md-block({ font-size: @font_16; });
+      .xs-block({ font-size: @font_14; });
     }
   }
   .content {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     .item {
       display: flex;
       flex-direction: column;
       padding: 1rem;
-      width: 20%;
-      margin: 0 1%;
-      height: 20vh;
+      transition: 1s;
+      .md-block({ width: 45%; justify-content: center; align-items: center });
+    }
+    .address {
+      .s-block({ width: 20%; });
+      .xs-block({ text-align: center })
+    }
+    .number {
+
+    }
+    .contacts {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 25%;
+
+      .h4 {
+        width: 100%;
+        white-space: nowrap;
+        margin-top: 0;
+        .ld-block({ font-size: @font_16; });
+        .sm-block({ white-space: normal; });
+      }
+      .a {
+        width: 22%;
+        margin-left: 1%;
+        margin-right: 1%;
+      }
+    }
+    .mib {
+      .h4 {
+        margin-top: 0;
+      }
+      .h1 {
+        font-family: BigCaslon;
+        font-size: 50px;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #000000;
+        transition: 1s;
+        .md-block({ font-family: Sacramento; })
+      }
     }
   }
 
