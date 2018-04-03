@@ -50,6 +50,22 @@ h6, .h6 {
   text-align: center;
   margin: 6px 0;
 }
+.up {
+  background-color: @color_apple-green;
+  border-radius: 10px;
+  color: #000;
+  cursor: pointer;
+  display: none;
+  padding: 1% 2%;
+  position: fixed;
+  top: 90%;
+  left: 87%;
+  transition: 1s;
+  &:hover{
+    background-color: #000000;
+    color: #ffffff;
+  }
+}
 
 .head {
   display: flex;
@@ -554,6 +570,7 @@ h6, .h6 {
   }
 
 }
+
 
 .debug(@background, @outline) {
   height: 100vh;
