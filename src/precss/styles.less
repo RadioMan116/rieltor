@@ -110,6 +110,7 @@ h6, .h6 {
           display: flex;
           flex-direction: column;
           justify-content: center;
+          animation: anime-P 1.6s ease-out;
 
           h2 {
             width: 100%;
@@ -153,6 +154,7 @@ h6, .h6 {
           justify-content: center;
           font-family: @font_roboto;
           align-items: center;
+          animation: anime-H3 1.3s ease-out;
           h1 {
             font-weight: 300;
             font-style: normal;
@@ -244,7 +246,7 @@ h6, .h6 {
       min-width: 450px;
       transition: 1s;
       animation: forwards;
-      .s-block({ order: -2; min-width: unset; width: 45%; });
+      .s-block({ order: -2; min-width: unset; width: 45%; animation: anime-P 1.6s ease-out; });
       .md-block({ width: 85%; img {
         width: 100%
       } });
@@ -257,7 +259,7 @@ h6, .h6 {
       border: solid 1px #979797;
       background: black;
       transition: 1s;
-      .s-block({ position: unset; flex-basis: unset; width: 45%; margin-left: 3%; margin-top: -2%; });
+      .s-block({ position: unset; flex-basis: unset; width: 45%; margin-left: 3%; margin-top: -2%;animation: anime-H3 1.6s ease-out; });
       .md-block({ display: none; });
     }
 
@@ -338,7 +340,7 @@ h6, .h6 {
         }
         .text {
           background: @color_apple-green;
-          .xs-block({ opacity: 1; transition: 1s; animation: forwards; });
+          .xs-block({ opacity: 1; background: rgba(126, 211, 33, 0.78); transition: 1s; animation: anime-H3 1.3s ease-out; });
 
           .h4 {
             color: @color_white;
