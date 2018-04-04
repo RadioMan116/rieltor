@@ -1,6 +1,9 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var preproc = require('gulp-less');
+var gcmq = require('gulp-group-css-media-queries');
+var autoprefixer = require('gulp-autoprefixer');
+var cleanCSS = require('gulp-clean-css');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var cssmin = require('gulp-cssmin');
@@ -26,7 +29,14 @@ gulp.task('sass', function () {
 gulp.task('preproc', function () {
     return gulp.src('src/precss/**/*.less')
         .pipe(preproc())
-        .pipe(cssmin())
+        .pipe(gcmq())
+        .pipe(autoprefixer({
+            browsers: ['> 0.1%'],
+            cascade: false
+        }))
+        .pipe(cleanCSS({
+            level: 2
+        }))
         .pipe(gulp.dest('dist/style/'));
 });
 
