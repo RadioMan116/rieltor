@@ -27,7 +27,7 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('dist/style/'));
 });
 gulp.task('preproc', function () {
-    return gulp.src('src/precss/**/*.less')
+    return gulp.src('src/precss/styles.less')
         .pipe(preproc())
         .pipe(gcmq())
         .pipe(autoprefixer({
@@ -51,8 +51,8 @@ gulp.task('scripts', function () {
         .pipe(gulp.dest('./dist/js/'))
 });
 
-gulp.task('sections', ['sass'], function () {
-    var criticalStyle = fs.readFileSync('./dist/style/index.css', 'utf8');
+gulp.task('sections', ['preproc'], function () {
+    var criticalStyle = fs.readFileSync('./dist/style/styles.css', 'utf8');
     var version = '4';
     return gulp.src('./src/*.ejs')
         .pipe(ejs({criticalStyle: criticalStyle, version: version}, {}, {ext: '.html'}))
