@@ -53,10 +53,11 @@ h6, .h6 {
 
 .up {
 
-  background-color: @color_apple-green;
+  background-color: rgba(126, 211, 33, 0.5);
   border-radius: 10px;
-  color: #000;
+  color: #ffffff;
   cursor: pointer;
+
   display: none;
   padding: 1% 2%;
   position: fixed;
@@ -76,8 +77,8 @@ h6, .h6 {
   .header {
     max-width: 1440px;
     width: 100%;
-    background: url("/img/building1080592.png") no-repeat;
-    background-size: contain;
+    background: url("/img/building-1080592.jpg") no-repeat;
+    background-size: cover;
     position: relative;
 
     .spacer {
@@ -113,7 +114,7 @@ h6, .h6 {
           justify-content: center;
           animation: anime-P 1.6s ease-out;
 
-          h2 {
+          .h2 , h2{
             width: 100%;
             font-weight: 300;
             font-family: @font_light;
@@ -156,7 +157,7 @@ h6, .h6 {
           font-family: @font_roboto;
           align-items: center;
           animation: anime-H3 1.3s ease-out;
-          h1 {
+          .h1 {
             font-weight: 300;
             font-style: normal;
             font-stretch: normal;
@@ -220,6 +221,7 @@ h6, .h6 {
 
   .about_company {
     margin-top: 9.2%;
+    margin-bottom: 4%;
     font-size: 36px;
     font-weight: 300;
     font-style: normal;
@@ -229,6 +231,7 @@ h6, .h6 {
     letter-spacing: normal;
     text-align: left;
     color: @color_apple-green;
+
     span {
       font-weight: 900;
     }
@@ -248,8 +251,10 @@ h6, .h6 {
       transition: 1s;
       animation: forwards;
       .s-block({ order: -2; min-width: unset; width: 45%; animation: anime-P 1.6s ease-out; });
-      .md-block({ width: 85%; img {
-        width: 100%
+      .md-block({ width: 100%;
+        img {
+        width: 100%;
+          height: fit-content;
       } });
     }
     .enclosed {
@@ -280,7 +285,7 @@ h6, .h6 {
       margin-bottom: 12%;
       transition: 1s;
       .s-block({ order: -2; width: 45%; margin: 0 0 auto 3%; padding-left: 2%; });
-      .md-block({ padding: 3% 0 2% 0; border-left: none; border-top: solid 2px @color_apple-green; width: 85%; margin: 2% 0 2% 0; });
+      .md-block({ padding: 3% 0 2% 0; border-left: none; border-top: solid 2px @color_apple-green; width: 100%; margin: 2% 0 2% 0; });
 
     }
     .infos {
@@ -288,7 +293,7 @@ h6, .h6 {
       margin: 0 0 0 auto;
       transition: 1s;
       .s-block({ order: -1; width: 45%; margin: 0; align-self: flex-end; });
-      .md-block({ width: 85%; margin: 0; });
+      .md-block({ width: 100%; margin: 0; });
       .ls-block({ width: 100%; });
       .info {
         display: flex;
@@ -333,7 +338,9 @@ h6, .h6 {
       margin-top: 5.2%;
 
       .sm-block({ flex-direction: column; });
-      .xs-block({ position: relative });
+      .xs-block({ position: relative;
+      img{max-height: 400px;}
+      });
 
       &:hover {
         .img {
@@ -341,7 +348,7 @@ h6, .h6 {
         }
         .text {
           background: @color_apple-green;
-          .xs-block({ opacity: 1; background: rgba(126, 211, 33, 0.78); transition: 1s; animation: anime-H3 1.3s ease-out; });
+          .xs-block({ opacity: 1; background: rgba(126, 211, 33, 0.78); transition: 1s; animation: anime-H3 1.3s ease-out;z-index: 1011; });
 
           .h4 {
             color: @color_white;
@@ -353,14 +360,17 @@ h6, .h6 {
           }
         }
       }
+
+
       .img {
         display: flex;
         width: 73.7564322%;
         border: 1px solid @color_apple-green;
         transition: 1s;
         opacity: 0.5;
+        z-index: 1000;
         .sm-block({ width: 100%; });
-        .xs-block({ opacity: 1; });
+        .xs-block({ opacity: 1; height: 90%; });
       }
       .text {
 
@@ -446,7 +456,6 @@ h6, .h6 {
 .useful {
   background: @color_apple-green;
   padding-bottom: 3%;
-  margin-bottom: 6%;
   .h1 {
     text-align: left;
     color: @color_white;
@@ -496,6 +505,24 @@ h6, .h6 {
   }
 }
 
+.map{
+  position: relative;
+  padding-top: 40%;
+  .sm-block({
+  padding-top: 50%;
+  });
+  .xs-block({
+    padding-top: 60%;
+  });
+  .main{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
 .footer {
   .h1 {
     .ld-block({ font-size: @font_26; });
@@ -504,6 +531,7 @@ h6, .h6 {
   .span {
     display: flex;
     justify-content: center;
+    align-items: baseline;
     .green {
       color: @color_apple-green;
       font-weight: bold;
@@ -529,6 +557,9 @@ h6, .h6 {
       .md-block({ width: 45%; justify-content: center; align-items: center });
     }
     .address {
+      .h4{
+        .ld-block({ font-size: @font_16; });
+      }
       .s-block({ width: 20%; });
       .xs-block({ text-align: center })
     }
