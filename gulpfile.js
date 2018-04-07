@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var preproc = require('gulp-less');
-// var gcmq = require('gulp-group-css-media-queries');
 var autoprefixer = require('gulp-autoprefixer');
 var cleanCSS = require('gulp-clean-css');
 var concat = require('gulp-concat');
@@ -29,7 +28,6 @@ gulp.task('sass', function () {
 gulp.task('preproc', function () {
     return gulp.src('src/precss/styles.less')
         .pipe(preproc())
-        // .pipe(gcmq())
         .pipe(autoprefixer({
             browsers: ['> 0.1%'],
             cascade: false
