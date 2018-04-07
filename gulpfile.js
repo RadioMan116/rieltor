@@ -1,16 +1,17 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var preproc = require('gulp-less');
-var autoprefixer = require('gulp-autoprefixer');
-var cleanCSS = require('gulp-clean-css');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var cssmin = require('gulp-cssmin');
-var rename = require('gulp-rename');
-var htmlmin = require('gulp-htmlmin');
-var ejs = require('gulp-ejs');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const preproc = require('gulp-less');
+const gcmq = require('gulp-group-css-media-queries');
+const autoprefixer = require('gulp-autoprefixer');
+const cleanCSS = require('gulp-clean-css');
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
+const cssmin = require('gulp-cssmin');
+const rename = require('gulp-rename');
+const htmlmin = require('gulp-htmlmin');
+const ejs = require('gulp-ejs');
 // var babel = require('gulp-babel');
-var fs = require('fs');
+const fs = require('fs');
 
 gulp.task('grid', function () {
     return gulp.src('src/style/**/grid-system.scss')
@@ -28,6 +29,7 @@ gulp.task('sass', function () {
 gulp.task('preproc', function () {
     return gulp.src('src/precss/styles.less')
         .pipe(preproc())
+        .pipe(gcmq())
         .pipe(autoprefixer({
             browsers: ['> 0.1%'],
             cascade: false
