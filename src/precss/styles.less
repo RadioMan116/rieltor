@@ -62,12 +62,30 @@ h6, .h6 {
   padding: 1% 2%;
   position: fixed;
   top: 90%;
-  left: 87%;
+  left: 94%;
   transition: 1s;
   &:hover {
     background-color: #000000;
     color: #ffffff;
   }
+}
+
+.carousel-inner > .item > img {
+  height: 500px;
+  width: 100%;
+  .s-block({ max-height: 450px; });
+}
+
+.sliderh1 {
+  background-color: rgba(122, 54, 42, 0.6) !important;
+}
+
+.sliderh2 {
+  background-color: rgba(194, 160, 119, 0.6) !important;
+}
+
+.sliderh3 {
+  background-color: rgba(194, 160, 119, 0.6) !important;
 }
 
 .head {
@@ -132,14 +150,11 @@ h6, .h6 {
             .ld-block({ font-size: @font_26; });
             .s-block({ font-size: @font_22; });
             .sm-block({ font-size: @font_20; margin-top: 4%; margin-bottom: 4%; });
-            .md-block({ font-size: @font_18;
-              &:first-child {
-                width: 80%;
-              }
-              &:last-child {
+            .md-block({ font-size: @font_18; &:first-child {
+              width: 80%;
+            } &:last-child {
                 width: 90%;
-              }
-            });
+              } });
             .xs-block({ font-size: @font_13; });
           }
           .green {
@@ -176,7 +191,7 @@ h6, .h6 {
             margin-top: 3.7rem;
             margin-bottom: 0;
             .ld-block({ font-size: 26px; line-height: inherit });
-            .md-block({ font-size: @font_22;});
+            .md-block({ font-size: @font_22; });
             .xs-block({ font-size: @font_18; });
 
           }
@@ -430,7 +445,7 @@ h6, .h6 {
           transition: 1s;
           margin-top: 13.6666666666666667%;
           margin-bottom: 0;
-          .sm-block({  margin-top: 5%; width: 90%; });
+          .sm-block({ margin-top: 5%; width: 90%; });
 
         }
         .h6 {
@@ -466,12 +481,18 @@ h6, .h6 {
     background-color: rgba(20, 49, 68, 0.6);
     padding: 20px;
     animation: anime-H3 1.3s ease-out;
+    .s-block({font-size: @font_24;});
+    .sm-block({ font-size: @font_22; padding: 2% 3%; width: fit-content; margin-left: auto; margin-right: auto; });
+    .sm-block({font-size: @font_18;});
   }
   .carousel-inner p {
     font-size: 18px;
     background-color: rgba(30, 29, 29, 0.6);
     padding: 20px;
     animation: anime-P 1.6s ease-out;
+    .s-block({font-size: 17px;});
+    .sm-block({font-size: @font_16;padding: 2% 3%;width: fit-content;});
+    .sm-block({font-size: @font_14;});
   }
 
   @keyframes anime-H3 {
@@ -504,8 +525,9 @@ h6, .h6 {
     text-align: left;
     color: @color_white;
     font-weight: 300;
-    padding-top: 5%;
-    padding-bottom: 3%;
+    padding-top: 4%;
+    padding-bottom: 2.83%;
+    margin-bottom: 0;
     padding-left: 2%;
 
   }
@@ -564,76 +586,122 @@ h6, .h6 {
 }
 
 .footer {
+  padding-bottom: 5%;
   .h1 {
     .ld-block({ font-size: @font_26; });
     .m-block({ font-size: @font_24; });
   }
-  .span {
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
+  .green {
+    color: @color_apple-green;
+    font-weight: bold;
+  }
+  .name {
+    text-align: left;
+    font-size: @font_36;
     .green {
       color: @color_apple-green;
       font-weight: bold;
     }
-    .h1 {
-      text-align: left;
-      font-size: @font_30;
-      .ld-block({ font-size: @font_26; });
-      .m-block({ font-size: @font_20; });
-      .md-block({ font-size: @font_16; });
-      .xs-block({ font-size: @font_14; });
-      .ls-block({ font-size: @font_12; });
-    }
+    .ld-block({ font-size: @font_28; });
+    .m-block({ font-size: @font_26; });
+    .s-block({ font-size: @font_24; text-align: center; });
+    .md-block({ font-size: @font_16; });
+    .xs-block({ font-size: @font_14; });
+    .ls-block({ font-size: @font_12; });
   }
   .content {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    margin-top: 3.7%;
+    .s-block({ justify-content: center; margin-left: auto; margin-right: auto; width: 90%; });
     .item {
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
       padding: 1rem;
       transition: 1s;
-      .md-block({ width: 45%; justify-content: center; align-items: center });
+      height: 100%;
+      line-height: 1.6;
+      margin-left: 2%;
+      .h4, .h1, .address, a {
+        .s-block({ text-align: center; });
+      }
+      .s-block({ flex-basis: 300px; margin-left: 0; line-height: 1.8; });
+      .md-block({ width: 45%; justify-content: center; align-items: center; flex-basis: unset; });
+    }
+    .add1 {
+      .s-block({ order: -2; text-align: center; });
     }
     .address {
-      .h4 {
-        .ld-block({ font-size: @font_16; });
+      font-size: @font_24;
+      text-align: left;
+      margin: 0;
+      .ld-block({ font-size: @font_18; });
+      .xs-block({ text-align: center });
+      .a {
+        color: #000000;
+        text-decoration: underline;
+        font-size: @font_24;
+        .ld-block({ font-size: @font_18; });
+        &:hover {
+          color: @color_apple-green;
+        }
       }
-      .s-block({ width: 20%; });
-      .xs-block({ text-align: center })
     }
     .number {
-
+      a {
+        color: #000000;
+        text-decoration: underline;
+        font-size: @font_24;
+        .ld-block({ font-size: @font_18; });
+        &:hover {
+          color: @color_apple-green;
+        }
+      }
     }
     .contacts {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      justify-content: center;
-      width: 25%;
-
+      width: 29%;
+      .s-block({ order: -1; justify-content: center; });
       .h4 {
         width: 100%;
         white-space: nowrap;
         margin-top: 0;
-        .ld-block({ font-size: @font_16; });
+        font-size: @font_24;
+        .ld-block({ font-size: @font_18; });
         .sm-block({ white-space: normal; });
       }
-      .a {
-        width: 22%;
-        margin-left: 1%;
-        margin-right: 1%;
+      .link {
+        display: flex;
+        .a {
+          border: 1px solid rgba(0, 0, 0, 0);
+          margin-left: 1%;
+          margin-right: 1%;
+          .ld-block({ width: 23%; });
+          &:hover {
+            border: 1px solid @color_apple-green;
+          }
+          &:first-child {
+            margin-left: 0;
+          }
+        }
       }
+
     }
     .mib {
+
       .h4 {
         margin-top: 0;
+        font-size: @font_24;
+        .ld-block({ font-size: @font_18; });
       }
       .h1 {
         font-family: BigCaslon;
         font-size: 50px;
+        height: 100%;
+        margin: 0;
         font-weight: 500;
         font-style: normal;
         font-stretch: normal;
@@ -642,6 +710,9 @@ h6, .h6 {
         color: #000000;
         transition: 1s;
         .md-block({ font-family: Sacramento; })
+      }
+      .h1 {
+        .s-block({ text-align: center });
       }
     }
   }
