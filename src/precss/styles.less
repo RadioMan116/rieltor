@@ -61,8 +61,8 @@ h6, .h6 {
   display: none;
   padding: 1% 2%;
   position: fixed;
-  top: 90%;
-  left: 94%;
+  top: 65%;
+  left: 93%;
   transition: 1s;
   &:hover {
     background-color: #000000;
@@ -95,7 +95,7 @@ h6, .h6 {
   .header {
     max-width: 1440px;
     width: 100%;
-    background: url("/img/building-1080592.jpg") no-repeat;
+    background: url("../img/building-1080592.jpg") no-repeat;
     background-size: cover;
 
     .items {
@@ -613,12 +613,12 @@ h6, .h6 {
     display: flex;
     flex-wrap: wrap;
     margin-top: 3.7%;
+    justify-content: space-between;
     .s-block({ justify-content: center; margin-left: auto; margin-right: auto; width: 90%; });
     .item {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 1rem;
       transition: 1s;
       height: 100%;
       line-height: 1.6;
@@ -626,23 +626,28 @@ h6, .h6 {
       .h4, .h1, .address, a {
         .s-block({ text-align: left; });
       }
-      .s-block({ flex-basis: 300px; margin-left: 0; line-height: 1.8; });
-      .md-block({ width: 45%; justify-content: left; align-items: left; flex-basis: unset; });
+      .s-block({ margin-left: 0; line-height: 1.8; width: 40%; padding: 1rem; });
+      .md-block({ justify-content: left; align-items: left; flex-basis: unset; });
+      .ls-block({ padding: 0.5rem; });
     }
     .add1 {
-      .s-block({ order: -2; text-align: left; });
+      .s-block({ order: -2; text-align: left; width: 40%; });
     }
     .address {
       font-size: @font_24;
       text-align: left;
       margin: 0;
       .ld-block({ font-size: @font_18; });
+      .md-block({ font-size: @font_14; });
+      .ls-block({ font-size: @font_12; });
 
       .a {
         color: #000000;
         text-decoration: underline;
         font-size: @font_24;
         .ld-block({ font-size: @font_18; });
+        .md-block({ font-size: @font_14; });
+        .ls-block({ font-size: @font_12; });
         &:hover {
           color: @color_apple-green;
         }
@@ -654,6 +659,8 @@ h6, .h6 {
         text-decoration: underline;
         font-size: @font_24;
         .ld-block({ font-size: @font_18; });
+        .md-block({ font-size: @font_14; });
+        .ls-block({ font-size: @font_12; white-space: nowrap; });
         &:hover {
           color: @color_apple-green;
         }
@@ -663,64 +670,58 @@ h6, .h6 {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      width: 29%;
       .s-block({ order: -1; justify-content: left; });
-      .h4 {
-        width: 100%;
-        white-space: nowrap;
-        margin-top: 0;
-        font-size: @font_24;
-        text-align: left;
-        .ld-block({ font-size: @font_18; });
-        .sm-block({ white-space: normal; });
-      }
-      .link {
-        display: flex;
-        .a {
-          border: 1px solid rgba(0, 0, 0, 0);
-          margin-left: 1%;
-          margin-right: 1%;
-          justify-content: left;
-          .ld-block({ width: 23%; });
-          &:hover {
-            border: 1px solid @color_apple-green;
-          }
-          &:first-child {
-            margin-left: 0;
-          }
+    }
+    .link {
+      display: flex;
+      white-space: nowrap;
+      font-size: @font_24;
+      .ld-block({ font-size: @font_18; });
+      .md-block({ font-size: @font_14; });
+      .ls-block({ font-size: @font_12; });
+      .a {
+        border: 1px solid rgba(0, 0, 0, 0);
+        margin-left: 10px;
+        justify-content: left;
+        text-decoration: underline;
+        &:hover {
+          color: @color_apple-green;
         }
       }
-
     }
-    .mib {
 
-      .h4 {
-        margin-top: 0;
-        font-size: @font_24;
-        .ld-block({ font-size: @font_18; });
-      }
-      .h1 {
-        font-family: BigCaslon;
-        font-size: 50px;
-        height: 100%;
-        margin: 0;
-        font-weight: 500;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: normal;
-        letter-spacing: normal;
-        color: #000000;
-        transition: 1s;
-        text-align: left;
-        .md-block({ font-family: Sacramento; });
-        a {
-          color: black
-        }
-      }
-
-    }
   }
+  .mib {
 
+    .h4 {
+      margin-top: 0;
+      font-size: @font_24;
+      text-align: left;
+      .ld-block({ font-size: @font_18; });
+      .md-block({ font-size: @font_14; });
+      .ls-block({ font-size: @font_12; });
+    }
+    .h1 {
+      font-family: BigCaslon;
+      font-size: 50px;
+      height: 100%;
+      margin: 0;
+      font-weight: 500;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #000000;
+      transition: 1s;
+      text-align: left;
+      .md-block({ font-size: @font_34; });
+      .ls-block({ font-size: @font_24; });
+      a {
+        color: black
+      }
+    }
+
+  }
 }
 
 .debug(@background, @outline) {
