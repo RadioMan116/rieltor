@@ -64,16 +64,25 @@ h6, .h6 {
   top: 65%;
   left: 93%;
   transition: 1s;
+  z-index: 2000;
   &:hover {
-    background-color: #000000;
+    background-color: @color_charcoal-grey;
     color: #ffffff;
   }
+  .xs-block({
+    padding: 1rem 2rem;
+    top: 65%;
+    left: 89%;
+  });
 }
 
 .carousel-inner > .item > img {
   height: 500px;
   width: 100%;
   .s-block({ max-height: 450px; });
+  .sm-block({ max-height: 400px; });
+  .md-block({ max-height: 370px; });
+  .ls-block({ max-height: 320px; });
 }
 
 .sliderh1 {
@@ -310,7 +319,6 @@ h6, .h6 {
       .s-block({ order: -2; min-width: unset; width: 45%; animation: anime-P 1.6s ease-out; });
       .md-block({ width: 100%; img {
         width: 100%;
-        height: fit-content;
       } });
     }
     .enclosed {
@@ -394,9 +402,10 @@ h6, .h6 {
       margin-top: 5.2%;
 
       .sm-block({ flex-direction: column; });
-      .xs-block({ position: relative; img {
-        max-height: 400px;
-      } });
+      .xs-block({ position: relative;
+        img {
+          max-height: 330px;
+        } });
 
       &:hover {
         .img {
@@ -484,6 +493,7 @@ h6, .h6 {
     .s-block({ font-size: @font_24; });
     .sm-block({ font-size: @font_22; padding: 2% 3%; width: fit-content; margin-left: auto; margin-right: auto; });
     .sm-block({ font-size: @font_18; });
+    .ls-block({ font-size: @font_14; });
   }
   .carousel-inner p {
     font-size: 18px;
@@ -493,6 +503,7 @@ h6, .h6 {
     .s-block({ font-size: 17px; });
     .sm-block({ font-size: @font_16; padding: 2% 3%; width: fit-content; });
     .sm-block({ font-size: @font_14; });
+    .ls-block({ font-size: @font_12; });
   }
 
   @keyframes anime-H3 {
@@ -541,6 +552,8 @@ h6, .h6 {
         width: 90%;
         text-align: left;
         font-family: Helvetica, sans-serif;
+        .sm-block({ font-size: @font_16; });
+        .ls-block({ font-size: @font_14; });
         &:first-child {
           .sm-block({ width: 90%; });
         }
@@ -587,6 +600,7 @@ h6, .h6 {
 
 .footer {
   padding-bottom: 5%;
+  .md-block({padding-bottom: 10%});
   .h1 {
     .ld-block({ font-size: @font_26; });
     .m-block({ font-size: @font_24; });
@@ -684,8 +698,11 @@ h6, .h6 {
         margin-left: 10px;
         justify-content: left;
         text-decoration: underline;
+        img {
+          .md-block({width: 60%; });
+        }
         &:hover {
-          color: @color_apple-green;
+          opacity: 0.6;
         }
       }
     }
